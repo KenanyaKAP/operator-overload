@@ -1,13 +1,15 @@
 CXX?=g++ 
 CXXFLAGS+= -std=c++17 -O3 -Wall -Wextra -I.
 
+OUTPUT=main
+
 SOURCEDIR=src
 OBJECTSDIR=obj
 
 SOURCES=$(wildcard $(SOURCEDIR)/*.cpp)
 OBJECTS=$(SOURCES:$(SOURCEDIR)/%.cpp=$(OBJECTSDIR)/%.o)
 
-sim: $(OBJECTS)
+$(OUTPUT): $(OBJECTS)
 	$(CXX) $(CXXFLAGS) -o $@ $^
 
 $(OBJECTSDIR)/%.o: $(SOURCEDIR)/%.cpp
@@ -19,7 +21,7 @@ $(OBJECTSDIR):
 	mkdir $@
 
 clean:
-	del $(OBJECTSDIR)\*.o sim.exe
+	del $(OBJECTSDIR)\*.o $(OUTPUT).exe
 
 %.exe: %.cpp
 	$(CXX) $(CXXFLAGS) -o $@ $<
