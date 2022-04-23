@@ -6,10 +6,17 @@ using namespace std;
 
 void PersegiPanjang::print()
 {
-    cout << "x min     : " << this->xmin << endl;
-    cout << "x max     : " << this->xmax << endl;
-    cout << "y min     : " << this->ymin << endl;
-    cout << "y max     : " << this->ymax << endl;
+    // cout << "x min     : " << this->xmin << endl;
+    // cout << "x max     : " << this->xmax << endl;
+    // cout << "y min     : " << this->ymin << endl;
+    // cout << "y max     : " << this->ymax << endl;
+    // cout << "panjang x : " << (this->xmax - this->xmin) << endl;
+    // cout << "tinggi y  : " << (this->ymax - this->ymin) << endl;
+    
+    cout << "x min     : " << (*this)[0] << endl;
+    cout << "x max     : " << (*this)[1] << endl;
+    cout << "y min     : " << (*this)[2] << endl;
+    cout << "y max     : " << (*this)[3] << endl;
     cout << "panjang x : " << (this->xmax - this->xmin) << endl;
     cout << "tinggi y  : " << (this->ymax - this->ymin) << endl;
 }
@@ -95,4 +102,21 @@ bool PersegiPanjang::operator==(const PersegiPanjang &other) const
         if (this->ymin < other.ymax && other.ymin < this->ymax)
             return true;
     return false;
+}
+
+float PersegiPanjang::operator[](int index)
+{
+    switch (index)
+    {
+    case 0:
+        return xmin;
+    case 1:
+        return xmax;
+    case 2:
+        return ymin;
+    case 3:
+        return ymax;
+    default:
+        return 0;
+    }
 }

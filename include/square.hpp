@@ -17,6 +17,7 @@ public:
     void operator++();
     void operator--();
     bool operator==(const PersegiPanjang &other) const;
+    float operator[](int index);
 };
 
 #endif
