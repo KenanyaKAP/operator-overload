@@ -12,7 +12,7 @@ void printPP(PersegiPanjang const &pp)
     cout << "y min     : " << pp[2] << endl;
     cout << "y max     : " << pp[3] << endl;
     cout << "panjang x : " << pp[1] - pp[0] << endl;
-    cout << "tinggi y  : " << pp[3] - pp[2] << endl;
+    cout << "lebar  y  : " << pp[3] - pp[2] << endl;
 }
 
 int main()
