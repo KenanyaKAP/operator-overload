@@ -9,11 +9,11 @@ private:
 
 public:
     PersegiPanjang(int xCenter, int yCenter, int width_x, int height_y);
-    PersegiPanjang operator+(const PersegiPanjang &rhs);
-    PersegiPanjang operator-(const PersegiPanjang &rhs);
-    void operator++();
-    void operator--();
-    bool operator==(const PersegiPanjang &other) const;
+    PersegiPanjang operator+(const PersegiPanjang &rhs) const;
+    PersegiPanjang operator-(const PersegiPanjang &rhs) const;
+    PersegiPanjang operator++();
+    PersegiPanjang operator--();
+    bool operator==(const PersegiPanjang &rhs) const;
     float operator[](int index) const;
 };
 

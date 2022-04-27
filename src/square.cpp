@@ -12,7 +12,7 @@ PersegiPanjang::PersegiPanjang(int xCenter, int yCenter, int width_x, int height
     this->ymax = (float)yCenter + (float)height_y/2;
 }
 
-PersegiPanjang PersegiPanjang::operator+(const PersegiPanjang& rhs)
+PersegiPanjang PersegiPanjang::operator+(const PersegiPanjang& rhs) const
 {
     PersegiPanjang res(0,0,0,0);
 
@@ -31,7 +31,7 @@ PersegiPanjang PersegiPanjang::operator+(const PersegiPanjang& rhs)
     }
 }
 
-PersegiPanjang PersegiPanjang::operator-(const PersegiPanjang& rhs)
+PersegiPanjang PersegiPanjang::operator-(const PersegiPanjang& rhs) const
 {
     PersegiPanjang res(0,0,0,0);
     if (*this == rhs)
@@ -49,7 +49,7 @@ PersegiPanjang PersegiPanjang::operator-(const PersegiPanjang& rhs)
     }
 }
 
-void PersegiPanjang::operator++()
+PersegiPanjang PersegiPanjang::operator++()
 {
     float width = this->xmax - this->xmin;
     float heigth = this->ymax - this->ymin;
@@ -57,9 +57,10 @@ void PersegiPanjang::operator++()
     this->xmax += width/2;
     this->ymin -= heigth/2;
     this->ymax += heigth/2;
+    return *this;
 }
 
-void PersegiPanjang::operator--()
+PersegiPanjang PersegiPanjang::operator--()
 {
     float width = this->xmax - this->xmin;
     float heigth = this->ymax - this->ymin;
@@ -67,12 +68,13 @@ void PersegiPanjang::operator--()
     this->xmax -= width/4;
     this->ymin += heigth/4;
     this->ymax -= heigth/4;
+    return *this;
 }
 
-bool PersegiPanjang::operator==(const PersegiPanjang &other) const
+bool PersegiPanjang::operator==(const PersegiPanjang &rhs) const
 {
-    if (this->xmin < other.xmax && other.xmin < this->xmax)
-        if (this->ymin < other.ymax && other.ymin < this->ymax)
+    if (this->xmin < rhs.xmax && rhs.xmin < this->xmax)
+        if (this->ymin < rhs.ymax && rhs.ymin < this->ymax)
             return true;
     return false;
 }

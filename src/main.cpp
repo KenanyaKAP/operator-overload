@@ -1,11 +1,10 @@
 #include <iostream>
-#include <vector>
 
 #include "include/square.hpp"
 
 using namespace std;
 
-void printPP(PersegiPanjang const &pp)
+void printPP(const PersegiPanjang &pp)
 {
     cout << "x min     : " << pp[0] << endl;
     cout << "x max     : " << pp[1] << endl;
@@ -58,8 +57,7 @@ int main()
     cout << endl << "Melakukan operator -- pada pp1: " << endl;
     --pp1;
     printPP(pp1);
-    system("PAUSE");
 
-    cout << "Done" << endl;
+    cout << endl << "Done" << endl;
     return 0;
 }
