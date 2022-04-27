@@ -19,40 +19,40 @@ int main()
     cout << "Membuat persegi panjang 1: " << endl;
     PersegiPanjang pp1(2, 2, 2, 3);
     printPP(pp1);
-    system("PAUSE");
+    cin.ignore();
     
     cout << endl << "Membuat persegi panjang 2: " << endl;
     PersegiPanjang pp2(0, 0, 4, 5);
     printPP(pp2);
-    system("PAUSE");
+    cin.ignore();
     
     cout << endl << "Apakah pp1 dan pp2 beririsan: " << endl;
     cout << ((pp1 == pp2) ? "Ya" : "Tidak") << endl;
-    system("PAUSE");
+    cin.ignore();
     
     cout << endl << "Menambah pp1 dan pp2: (pp3)" << endl;
     PersegiPanjang pp3 = pp1 + pp2;
     printPP(pp3);
-    system("PAUSE");
+    cin.ignore();
     
     cout << endl << "Membuat persegi panjang 4: " << endl;
     PersegiPanjang pp4(-2, -2, 3, 2);
     printPP(pp4);
-    system("PAUSE");
+    cin.ignore();
     
     cout << endl << "Mengurangi pp2 dan pp4: (pp5)" << endl;
     PersegiPanjang pp5 = pp2 - pp4;
     printPP(pp5);
-    system("PAUSE");
+    cin.ignore();
     
     cout << endl << "Apakah pp5 dan pp1 beririsan: " << endl;
     cout << ((pp5 == pp1) ? "Ya" : "Tidak") << endl;
-    system("PAUSE");
+    cin.ignore();
 
     cout << endl << "Melakukan operator ++ pada pp5: " << endl;
     ++pp5;
     printPP(pp5);
-    system("PAUSE");
+    cin.ignore();
 
     cout << endl << "Melakukan operator -- pada pp1: " << endl;
     --pp1;
