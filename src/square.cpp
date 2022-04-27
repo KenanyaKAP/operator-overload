@@ -4,23 +4,6 @@
 
 using namespace std;
 
-void PersegiPanjang::print()
-{
-    // cout << "x min     : " << this->xmin << endl;
-    // cout << "x max     : " << this->xmax << endl;
-    // cout << "y min     : " << this->ymin << endl;
-    // cout << "y max     : " << this->ymax << endl;
-    // cout << "panjang x : " << (this->xmax - this->xmin) << endl;
-    // cout << "tinggi y  : " << (this->ymax - this->ymin) << endl;
-    
-    cout << "x min     : " << (*this)[0] << endl;
-    cout << "x max     : " << (*this)[1] << endl;
-    cout << "y min     : " << (*this)[2] << endl;
-    cout << "y max     : " << (*this)[3] << endl;
-    cout << "panjang x : " << (this->xmax - this->xmin) << endl;
-    cout << "tinggi y  : " << (this->ymax - this->ymin) << endl;
-}
-
 PersegiPanjang::PersegiPanjang(int xCenter, int yCenter, int width_x, int height_y)
 {
     this->xmin = (float)xCenter - (float)width_x/2;
@@ -48,11 +31,6 @@ PersegiPanjang PersegiPanjang::operator+(const PersegiPanjang& rhs)
     }
 }
 
-void PersegiPanjang::operator+=(const PersegiPanjang& rhs)
-{
-    *this = PersegiPanjang(*this+rhs);
-}
-
 PersegiPanjang PersegiPanjang::operator-(const PersegiPanjang& rhs)
 {
     PersegiPanjang res(0,0,0,0);
@@ -69,11 +47,6 @@ PersegiPanjang PersegiPanjang::operator-(const PersegiPanjang& rhs)
         cout << "Peringatan: Persegi Panjang tidak beririsan!\nMengeluarkan value pada sisi kiri" << endl;
         return *this;
     }
-}
-
-void PersegiPanjang::operator-=(const PersegiPanjang& rhs)
-{
-    *this = PersegiPanjang(*this-rhs);
 }
 
 void PersegiPanjang::operator++()
@@ -104,7 +77,7 @@ bool PersegiPanjang::operator==(const PersegiPanjang &other) const
     return false;
 }
 
-float PersegiPanjang::operator[](int index)
+float PersegiPanjang::operator[](int index) const
 {
     switch (index)
     {
