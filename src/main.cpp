@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "include/square.hpp"
+#include "include/rectangle.hpp"
 
 using namespace std;
 
